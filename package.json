@@ -2,6 +2,7 @@
   "name": "tutorial-site",
   "version": "1.0.0",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^3.4.0",
     "gulp-modernizr": "^1.0.0-alpha",
