@@ -1,5 +1,5 @@
 {
-  "name": "ToDO-list",
+  "name": "tutorial-site",
   "version": "1.0.0",
   "dependencies": {
     "gulp-cssnano": "^2.1.2",
