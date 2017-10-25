@@ -73,12 +73,20 @@
 "use strict";
 
 
+// export default main;
 var $ = __webpack_require__(3);
 
+//Specific By CLICKING
 $('li').click(function () {
   $(this).toggleClass('completed');
 });
-// export default main;
+
+$('span').click(function (event) {
+  $(this).parent().fadeOut(500, function () {
+    $(this).remove();
+  });
+  event.stopPropagation();
+});
 
 /***/ }),
 /* 1 */
