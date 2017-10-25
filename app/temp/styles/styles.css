@@ -499,10 +499,13 @@ a {
   margin-top: 0;
 }
 
-.Main {
-  color:red;
+#container {
+  width: 360px;
+  margin: 0 auto;
+  border: 2px solid gray;
 }
 
-.Main--par {
-  color: blue;
+.completed {
+  color: gray;
+  text-decoration: line-through;
 }
