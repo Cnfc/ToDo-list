@@ -445,58 +445,60 @@ a {
   color: #d59541;
 }
 
-.headline {
+/*.headline {
   font-size: 1.9rem;
   font-weight: 300;
-  color: #2f5572;
+  color: $mainBlue;
+
+  @mixin atSmall {
+  font-size: 2.875rem;
+  }*/
+
+.Main h1 {
+  background: #2980b9;
+  color: white;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
 }
 
-@media (min-width: 530px) {
-
-  .headline {
-    font-size: 2.875rem;
-  }
+.Main ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.headline--centered {
-  text-align: center;
+.Main li{
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
 }
 
-.headline--orange {
-  color: #d59541;
+.Main li:nth-child(2n){
+  background: #f7f7f7;
 }
 
-.headline--small {
-  font-size: 1.2rem;
+.Main input{
+  font-size: 18px;
+  color: #2980b9;
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 13px 13px 13px 13px;
+  box-sizing: border-box;
 }
 
-@media (min-width: 530px) {
-
-  .headline--small {
-    font-size: 1.875rem;
-  }
+.Main input:focus{
+  background: white;
+  border: 3px solid #2980b9;
+  outline: none;
 }
 
-.headline--narrow {
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.headline--light {
-  font-weight: 100;
-}
-
-.headline--b-margin-small {
-  margin-bottom: .5em;
-}
-
-.headline--b-margin-large {
-  margin-bottom: 1.6em;
-}
-
-.headline--no-t-margin {
-  margin-top: 0;
+.Main .completed {
+  color: gray;
+  text-decoration: line-through;
 }
 
 #container {
@@ -505,7 +507,8 @@ a {
   border: 2px solid gray;
 }
 
-.completed {
-  color: gray;
-  text-decoration: line-through;
+body {
+  background: #DC2424;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
