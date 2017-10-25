@@ -73,28 +73,37 @@
 "use strict";
 
 
-// export default main;
-var $ = __webpack_require__(3);
+var _jquery = __webpack_require__(3);
 
-//Specific By CLICKING
-$('ul').on("click", "li", function () {
-  $(this).toggleClass('completed');
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Check off by clicking
+(0, _jquery2.default)("ul").on("click", "li", function () {
+  (0, _jquery2.default)(this).toggleClass("completed");
 });
 
-$('ul').on('click', "span", function (event) {
-  $(this).parent().fadeOut(500, function () {
-    $(this).remove();
+//click on x to delete todo
+(0, _jquery2.default)("ul").on("click", "span", function (event) {
+  (0, _jquery2.default)(this).parent().fadeOut(500, function () {
+    (0, _jquery2.default)(this).remove();
   });
   event.stopPropagation();
 });
 
-$('input').keypress(function (event) {
+(0, _jquery2.default)("input[type='text'").keypress(function (event) {
   if (event.which === 13) {
-    var todoText = $(this).val();
-    $(this).val("");
-
-    $("ul").append('<li><span><i class="fa fa-trash"></i></span>' + todoText + '</li>');
+    //new todo
+    var todoText = (0, _jquery2.default)(this).val();
+    (0, _jquery2.default)(this).val("");
+    //create a new li and add to ul
+    (0, _jquery2.default)("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>");
   }
+});
+
+(0, _jquery2.default)(".fa-plus").click(function () {
+  (0, _jquery2.default)("input[type='text'").fadeToggle();
 });
 
 /***/ }),
