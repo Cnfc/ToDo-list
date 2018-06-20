@@ -1,23 +1,46 @@
-const path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-  entry: {
-    App: "./app/assets/scripts/App.js",
-    Vendor: "./app/assets/scripts/Vendor.js"
+  entry: [
+    'script!jquery/dist/jquery.min.js',
+    'script!foundation-sites/dist/js/foundation.min.js',
+    './app/app.jsx'
+  ],
+  externals: {
+    jquery: 'jQuery'
   },
-    output: {
-      path: path.resolve(__dirname, "./app/temp/scripts"),
-      filename: "[name].js"
+  plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
+  output: {
+    path: __dirname,
+    filename: './public/bundle.js'
+  },
+  resolve: {
+    root: __dirname,
+    modulesDirectiries: [
+      'node_modules',
+      './app/components'
+    ],
+    alias: {
+      applicationStyles: 'app/styles/app.css',
     },
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['react', 'es2015', 'stage-0']
         },
-        test: /\.js$/,
-        exclude: /node_modules/
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/
       }
     ]
-  }
-}
+  },
+  devtool: 'cheap-module-eval-source-map'
+};
