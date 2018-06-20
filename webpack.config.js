@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: [
@@ -21,7 +22,7 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    modulesDirectiries: [
+    modulesDirectories: [
       'node_modules',
       './app/components'
     ],

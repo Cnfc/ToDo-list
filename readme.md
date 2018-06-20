@@ -1,1 +1,1 @@
-Timer App with React
+React Todo App 
