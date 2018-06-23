@@ -3,13 +3,13 @@ var $ = require('jquery');
 module.exports = {
   setTodos: function (todos) {
     if($.isArray(todos)) {
-      localStorege.setItem('todos', JSON.stringify(todos));
+      localStorage.setItem('todos', JSON.stringify(todos));
       return todos;
 
     }
   },
   getTodos: function () {
-    var stringTodos = localStorege.getItem('todos');
+    var stringTodos = localStorage.getItem('todos');
     var todos = [];
 
     try {
